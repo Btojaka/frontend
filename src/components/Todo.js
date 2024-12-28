@@ -5,12 +5,10 @@ import { update_completed } from "../api/endpoints";
 const Todo = ({ id, todo_name, completed, deleteTodo }) => {
   const [isChecked, setIsChecked] = useState(completed);
   const handleDelete = () => {
-    console.log("id del todo =", id);
     deleteTodo(id);
   };
 
   const handleCompleted = () => {
-    console.log("id del todo updated =", id);
     update_completed(id, !isChecked);
     setIsChecked(!isChecked);
   };
