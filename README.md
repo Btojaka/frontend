@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Todo List Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the frontend of a Todo List application built with **React JS**. The backend of the application is implemented in **Ruby on Rails** and is located in a separate repository.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+- Task management (create, read, update, delete).
+- Intuitive and responsive user interface.
+- Communication with the backend via REST API.
+- State management using Context API or Redux (depending on your implementation).
+- Styled with CSS Modules or a library like TailwindCSS (adjust as per your project).
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before starting, make sure you have the following installed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node.js](https://nodejs.org/) (v14 or higher).
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for package management.
+- Access to the [backend repository](https://github.com/Btojaka/react_rails_todo) (update with the actual link).
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/usuario/todo-list-frontend.git
+   cd todo-list-frontend
+   ```
 
-### `npm run build`
+2. Install dependencies:
+   ```bash
+   npm install
+   # or if using yarn
+   yarn install
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Configure the `.env` file with the necessary variables to connect to the backend:
+   ```env
+   REACT_APP_API_URL=http://localhost:3000/api/v1
+   ```
+   - Update the URL based on the backend configuration.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Start the development server:
+   ```bash
+   npm start
+   # or if using yarn
+   yarn start
+   ```
 
-### `npm run eject`
+2. Open your browser and navigate to `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Ensure the backend is running and properly configured. You can find instructions in the [backend repository](https://github.com/Btojaka/react_rails_todo).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```plaintext
+src/
+├── api/                # API service configuration
+│   └── endpoints.js    # API endpoint definitions
+├── components/         # Reusable components
+│   ├── AddTodo.js      # Component for adding tasks
+│   ├── Todo.js         # Single task component
+│   └── TodoList.js     # Component for displaying the list of tasks
+├── App.css             # Global styles
+├── App.js              # Main application component
+├── App.test.js         # Tests for the App component
+├── index.css           # Styles for the root file
+├── index.js            # Entry point of the application
+├── logo.svg            # Logo asset
+├── reportWebVitals.js  # Performance measuring tool
+└── setupTests.js       # Test setup
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Technologies Used
 
-## Learn More
+- **React JS**: Core library for building the user interface.
+- **Axios**: For making HTTP requests to the backend.
+- **React Router**: For routing within the application.
+- **CSS Modules/TailwindCSS**: (Specify your choice).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! Follow these steps:
 
-### Code Splitting
+1. Fork the repository.
+2. Create a new branch for your feature (`git checkout -b feature/new-feature`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push your branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+This project is licensed under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Useful Links
 
-### Making a Progressive Web App
+- [Backend Repository](https://github.com/Btojaka/react_rails_todo)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Rails Documentation](https://guides.rubyonrails.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for contributing or using this application! If you have any questions, feel free to open an issue.
