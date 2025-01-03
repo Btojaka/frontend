@@ -1,29 +1,57 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
 .App {
   text-align: center;
   display: flex;
   width: 100vw;
   min-height: 100vh;
   justify-content: center;
-  padding-top: 50px;
-  background-color: #fcfcfc;
+  padding: 20px 0;
 }
 
 .app-container {
   display: inline-flex;
   flex-direction: column;
-  width: 92%;
+  width: 100%;
   max-width: 600px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-title {
+.title {
   font-size: 42px;
   font-weight: 800;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .todo {
-  border: 1px solid black;
+  border: 1px solid #ddd;
   min-height: 100px;
   border-radius: 8px;
+  padding: 15px;
+  background: #e0e0e032;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease, transform 0.2s ease; /* Transición para la sombra y el relieve */
+}
+
+.todo:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Sombra suave que da el efecto de relieve */
+  transform: translateY(-4px); /* El todo se eleva ligeramente */
 }
 
 .todo-container {
@@ -31,15 +59,20 @@ title {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
+  width: 100%;
   height: 100%;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: #888;
 }
 
 .todo-list {
   display: inline-flex;
   flex-direction: column;
-  gap: 20px; /* separacion entre elementos */
-  margin-top: 30px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .add-todo {
@@ -53,17 +86,54 @@ title {
 
 .add-input {
   width: 80%;
-  height: 30px;
+  height: 40px;
   border-radius: 8px;
-  border: 1px solid black;
-  padding: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.add-input:focus {
+  border-color: #4a90e2;
 }
 
 .add-button {
   width: 15%;
-  height: 30px;
+  height: 40px;
   border-radius: 8px;
-  border: 1px solid black;
-  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  background-color: #4a90e2;
+  color: white;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #357abd;
+}
+
+.add-button:focus {
+  outline: none;
+}
+
+.delete-button {
+  color: #d9534f;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: #c9302c;
+}
+
+@media (max-width: 600px) {
+  .add-input {
+    width: 70%;
+  }
+
+  .add-button {
+    width: 20%;
+  }
 }
