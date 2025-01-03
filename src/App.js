@@ -9,16 +9,20 @@ function App() {
 
   useEffect(() => {
     const fetchTodos = async () => {
-      const response = await get_todos();
-      setTodos(response);
+      try {
+        const response = await get_todos();
+        setTodos(response);
+      } catch (error) {
+        console.error("Error fetching todos: ", error);
+      }
     };
 
     fetchTodos();
-  }, [todos]);
+  }, []);
 
   const addTodo = async (todo_name) => {
     const todo = await add_todo(todo_name);
-    setTodos([todo, ...todos]);
+    setTodos((prevTodos) => [todo, ...prevTodos]);
   };
 
   const deleteTodo = async (id) => {

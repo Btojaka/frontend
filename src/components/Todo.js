@@ -17,8 +17,8 @@ const Todo = ({ id, todo_name, completed, deleteTodo }) => {
     <div className="todo">
       <div className="todo-container">
         <input checked={isChecked} onChange={handleCompleted} type="checkbox" />
-        <h3>{todo_name}</h3>
-        <RiDeleteBinLine onClick={handleDelete} size={22} />
+        <h3 className={isChecked ? "checked" : ""}>{todo_name}</h3>
+        <RiDeleteBinLine onClick={handleDelete} size={22} color="red" />
       </div>
     </div>
   );
